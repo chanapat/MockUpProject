@@ -5,6 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createDrawerNavigator} from '@react-navigation/drawer';
+import {Icon} from 'native-base';
 
 function HomeScreen({navigation}) {
   return (
@@ -79,11 +80,41 @@ function BottomTabs() {
         activeTintColor: '#F3BEBB',
         inactiveTintColor: 'gray',
       }}>
-      <Tab.Screen name="Home" component={HomeStack} />
-      <Tab.Screen name="Today" component={TodayStack} />
-      <Tab.Screen name="Progress" component={ProgressStack} />
-      <Tab.Screen name="Community" component={CommunityStack} />
-      <Tab.Screen name="Profile" component={ProfileStack} />
+      <Tab.Screen
+        name="Home"
+        component={HomeStack}
+        options={{
+          tabBarIcon: () => <Icon name="home" color="#F3BEBB" />,
+        }}
+      />
+      <Tab.Screen
+        name="Today"
+        component={TodayStack}
+        options={{
+          tabBarIcon: () => <Icon name="book" color="#F3BEBB" />,
+        }}
+      />
+      <Tab.Screen
+        name="Progress"
+        component={ProgressStack}
+        options={{
+          tabBarIcon: () => <Icon name="pulse" color="#F3BEBB" />,
+        }}
+      />
+      <Tab.Screen
+        name="Community"
+        component={CommunityStack}
+        options={{
+          tabBarIcon: () => <Icon name="people" color="#F3BEBB" />,
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={ProfileStack}
+        options={{
+          tabBarIcon: () => <Icon name="person" color="#F3BEBB" />,
+        }}
+      />
     </Tab.Navigator>
   );
 }
