@@ -10,10 +10,6 @@ function HomeScreen({navigation}) {
   return (
     <View style={styles.MiddleContent}>
       <Text>Home Screen</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
-      />
     </View>
   );
 }
@@ -105,7 +101,6 @@ function HomeStack() {
           headerTintColor: '#515C5D',
         }}
       />
-      <Stack.Screen name="Details" component={DetailsScreen} />
     </Stack.Navigator>
   );
 }
