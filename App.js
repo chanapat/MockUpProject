@@ -80,14 +80,14 @@ function BottomTabs() {
   return (
     <Tab.Navigator
       tabBarOptions={{
-        activeTintColor: 'tomato',
+        activeTintColor: '#F3BEBB',
         inactiveTintColor: 'gray',
       }}>
       <Tab.Screen name="Home" component={HomeStack} />
       <Tab.Screen name="Today" component={TodayStack} />
-      <Tab.Screen name="Progress" component={ProgressScreen} />
-      <Tab.Screen name="Community" component={CommunityScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen name="Progress" component={ProgressStack} />
+      <Tab.Screen name="Community" component={CommunityStack} />
+      <Tab.Screen name="Profile" component={ProfileStack} />
     </Tab.Navigator>
   );
 }
@@ -95,7 +95,16 @@ function BottomTabs() {
 function HomeStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          headerStyle: {
+            backgroundColor: '#F3BEBB',
+          },
+          headerTintColor: '#515C5D',
+        }}
+      />
       <Stack.Screen name="Details" component={DetailsScreen} />
     </Stack.Navigator>
   );
@@ -104,7 +113,65 @@ function HomeStack() {
 function TodayStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Today" component={TodayScreen} />
+      <Stack.Screen
+        name="Today"
+        component={TodayScreen}
+        options={{
+          headerStyle: {
+            backgroundColor: '#F3BEBB',
+          },
+          headerTintColor: '#515C5D',
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+
+function ProgressStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Progress"
+        component={ProgressScreen}
+        options={{
+          headerStyle: {
+            backgroundColor: '#F3BEBB',
+          },
+          headerTintColor: '#515C5D',
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+function CommunityStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Community"
+        component={CommunityScreen}
+        options={{
+          headerStyle: {
+            backgroundColor: '#F3BEBB',
+          },
+          headerTintColor: '#515C5D',
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+function ProfileStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          headerStyle: {
+            backgroundColor: '#F3BEBB',
+          },
+          headerTintColor: '#515C5D',
+        }}
+      />
     </Stack.Navigator>
   );
 }
