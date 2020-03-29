@@ -1,11 +1,11 @@
-import React from 'react';
-import {StyleSheet, View, Text, Button} from 'react-native';
+import React, {component} from 'react';
+import {StyleSheet, View, Text} from 'react-native';
 import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import {Icon} from 'native-base';
+import {Icon, Button, Container, Content, Accordion,arr} from 'native-base';
 
 function HomeScreen({navigation}) {
   return (
@@ -14,13 +14,7 @@ function HomeScreen({navigation}) {
     </View>
   );
 }
-function DetailsScreen() {
-  return (
-    <View style={styles.MiddleContent}>
-      <Text>Details Screen</Text>
-    </View>
-  );
-}
+
 function ProfileScreen() {
   return (
     <View style={styles.MiddleContent}>
@@ -37,11 +31,20 @@ function SettingScreen() {
   );
 }
 
+const toDayArray = [
+  {title: 'Breakfast ', content: 'Breakfast menu and calories here!!'},
+  {title: 'Lunch', content: 'Lunch menu and calories here!!'},
+  {title: 'Dinner', content: 'Dinner menu and calories here!!'},
+  {title: 'Break and Snack', content: 'Break menu and calories here!!'}
+];
+
 function TodayScreen() {
   return (
-    <View style={styles.MiddleContent}>
-      <Text>Today!</Text>
-    </View>
+    <Container>
+      <Content padder>
+        <Accordion dataArray={toDayArray} />
+      </Content>
+    </Container>
   );
 }
 
