@@ -79,6 +79,48 @@ function CommunityScreen() {
               <Thumbnail
                 source={{
                   uri:
+                    'https://scontent.fcnx1-1.fna.fbcdn.net/v/t1.0-9/90193636_3188145554582260_1532929013977186304_n.jpg?_nc_cat=108&_nc_sid=85a577&_nc_eui2=AeGHCP0xtytTHbmenKQiZORh9IJzgyUGDpnQ4MStoerGdzJodWn7_9mqH78h4vNrUTz2MfoJAWgFw1ygF-yYNvdkj4m7Hu0jcrlkTf2LO-xWcw&_nc_oc=AQk947zrqCw7y7WEzSVSJTKXWNEum0-6vVCB-hS_ewUiw4OzxkO93Tynte3w6NjzFzg&_nc_ht=scontent.fcnx1-1.fna&oh=1605b1d9d7e20f7f951175e440a96d49&oe=5EA3EF03',
+                }}
+              />
+              <Body>
+                <Text>Papp-Papp</Text>
+                <Text note>Chubby Chubby</Text>
+              </Body>
+            </Left>
+          </CardItem>
+          <CardItem cardBody>
+            <Image
+              source={{
+                uri:
+                  'https://i.pinimg.com/originals/8c/c2/47/8cc247110d67c7788bf97fa015316862.jpg',
+              }}
+              style={{height: 400, width: null, flex: 1}}
+            />
+          </CardItem>
+          <CardItem>
+            <Left>
+              <Button transparent>
+                <Icon active name="thumbs-up" />
+                <Text>56 Likes</Text>
+              </Button>
+            </Left>
+            <Body>
+              <Button transparent>
+                <Icon active name="chatbubbles" />
+                <Text>8 Comments</Text>
+              </Button>
+            </Body>
+            <Right>
+              <Text>2h ago</Text>
+            </Right>
+          </CardItem>
+        </Card>
+        <Card>
+          <CardItem>
+            <Left>
+              <Thumbnail
+                source={{
+                  uri:
                     'https://scontent.fcnx1-1.fna.fbcdn.net/v/t1.0-9/67217944_2149871128457169_8156511433362767872_o.jpg?_nc_cat=109&_nc_sid=85a577&_nc_eui2=AeGxEy6ksGUS2ylpOfh64eOMvrpXHvM5KTwHjtX2BnLrxJbwe4EWm48x7X0hb-ErSEfKmfcpEthb4cddcbZSeI_Jn0AOU-npkJ9svxObp0tN_Q&_nc_oc=AQnzJqchWrpLD8BSSKGvmLIjI_qGLWF9zOKHskAhYnUXofaA9A352QAn9K7JI-luAok&_nc_ht=scontent.fcnx1-1.fna&oh=6b7c148a79af7ede3be51717909ee69b&oe=5EA64B64',
                 }}
               />
@@ -92,16 +134,16 @@ function CommunityScreen() {
             <Image
               source={{
                 uri:
-                  'https://d8xxy3dl0iwm6.cloudfront.net/wp-content/uploads/2016/10/Open_kfc.png',
+                  'https://cheatdaydesign.com/wp-content/uploads/2019/02/KFC2-1024x1024.jpg',
               }}
-              style={{height: 200, width: null, flex: 1}}
+              style={{height: 400, width: null, flex: 1}}
             />
           </CardItem>
           <CardItem>
             <Left>
               <Button transparent>
                 <Icon active name="thumbs-up" />
-                <Text>12 Likes</Text>
+                <Text>24 Likes</Text>
               </Button>
             </Left>
             <Body>
@@ -111,7 +153,7 @@ function CommunityScreen() {
               </Button>
             </Body>
             <Right>
-              <Text>11h ago</Text>
+              <Text>8h ago</Text>
             </Right>
           </CardItem>
         </Card>
