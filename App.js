@@ -1,4 +1,4 @@
-import React, {component} from 'react';
+import React, {component, useState} from 'react';
 import {StyleSheet, View, Image} from 'react-native';
 import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
@@ -18,12 +18,33 @@ import {
   Left,
   Body,
   Right,
+  Fab,
 } from 'native-base';
 
 function HomeScreen({navigation}) {
+  const [active, setActive] = useState(false);
   return (
-    <View style={styles.MiddleContent}>
-      <Text>Home Screen</Text>
+    <Fab
+      active={active}
+      direction="up"
+      containerStyle={{}}
+      style={{backgroundColor: '#34A34F'}}
+      position="bottomRight"
+      onPress={() => setActive(!active)}>
+      <Icon name="add" />
+      <Button
+        style={{backgroundColor: '#F3BEBB'}}
+        onPress={() => navigation.navigate('MealAdd')}>
+        <Icon name="restaurant" />
+      </Button>
+    </Fab>
+  );
+}
+
+function MealAddScreen({navigation}) {
+  return (
+    <View>
+      <Text>yeah</Text>
     </View>
   );
 }
@@ -32,13 +53,14 @@ function ProfileScreen() {
   return (
     <View style={styles.MiddleContent}>
       <Text>Profile!</Text>
+      <Button style={{backgroundColor: '#5067FF'}} />
     </View>
   );
 }
 
 function SettingScreen() {
   return (
-    <View style={styles.MiddleContent}>
+    <View style={styles.MiddleContent} position="bottomRight">
       <Text>Settings!</Text>
     </View>
   );
@@ -233,6 +255,15 @@ function HomeStack() {
           headerTintColor: '#515C5D',
         }}
       />
+      <Stack.Screen name="MealAdd" component={MealAddStack} />
+    </Stack.Navigator>
+  );
+}
+
+function MealAddStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="MealAddScreen" component={MealAddScreen} />
     </Stack.Navigator>
   );
 }
