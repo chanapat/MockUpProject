@@ -11,7 +11,6 @@ import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {createDrawerNavigator} from '@react-navigation/drawer';
 import {
   Icon,
   Container,
@@ -30,38 +29,55 @@ import {
 import PieChart from 'react-native-pie-chart';
 
 const chart_wh = 220;
-const series = [123, 321, 123, 789, 537];
-const sliceColor = ['#F44336', '#2196F3', '#FFEB3B', '#4CAF50', '#FF9800'];
+const series = [123, 300];
+const sliceColor = ['#F44336', '#2196F3'];
 
 function HomeScreen({navigation}) {
-  const [active, setActive] = useState(false);
   return (
-    <View style={styles.MiddleContent}>
-      <Text />
-      <StatusBar hidden={true} />
-      <PieChart
-        chart_wh={chart_wh}
-        series={series}
-        sliceColor={sliceColor}
-        doughnut={true}
-        coverRadius={0.75}
-        coverFill={'#FFF'}
-      />
-      <Fab
-        active={active}
-        direction="up"
-        containerStyle={{}}
-        style={{backgroundColor: '#34A34F'}}
-        position="bottomRight"
-        onPress={() => setActive(!active)}>
-        <Icon name="add" />
-        <Button
-          style={{backgroundColor: '#F3BEBB'}}
-          onPress={() => navigation.navigate('MealAdd')}>
-          <Icon name="restaurant" />
-        </Button>
-      </Fab>
-    </View>
+    <Container>
+      <View style={styles.MiddleContent}>
+        <Text />
+        <StatusBar hidden={true} />
+        <PieChart
+          chart_wh={chart_wh}
+          series={series}
+          sliceColor={sliceColor}
+          doughnut={true}
+          coverRadius={0.75}
+          coverFill={'#FFF'}
+        />
+      </View>
+      <Content>
+        <Card>
+          <CardItem>
+            <Left>
+              <Text>asdasdasdasd</Text>
+            </Left>
+          </CardItem>
+        </Card>
+        <Card>
+          <CardItem>
+            <Left>
+              <Text>asdasdasdasd</Text>
+            </Left>
+          </CardItem>
+        </Card>
+        <Card>
+          <CardItem>
+            <Left>
+              <Text>asdasdasdasd</Text>
+            </Left>
+          </CardItem>
+        </Card>
+        <Card>
+          <CardItem>
+            <Left>
+              <Text>asdasdasdasd</Text>
+            </Left>
+          </CardItem>
+        </Card>
+      </Content>
+    </Container>
   );
 }
 
@@ -209,16 +225,6 @@ function CommunityScreen() {
 }
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
-const Drawer = createDrawerNavigator();
-
-function SideBar() {
-  return (
-    <Drawer.Navigator>
-      <Drawer.Screen name="Home" component={BottomTabs} />
-      <Drawer.Screen name="Setting" component={SettingScreen} />
-    </Drawer.Navigator>
-  );
-}
 
 function BottomTabs() {
   return (
@@ -362,7 +368,7 @@ function ProfileStack() {
 function App() {
   return (
     <NavigationContainer>
-      <SideBar />
+      <BottomTabs />
     </NavigationContainer>
   );
 }
@@ -370,7 +376,6 @@ function App() {
 const styles = StyleSheet.create({
   MiddleContent: {
     flex: 1,
-    //justifyContent: 'center',
     alignItems: 'center',
   },
 });
