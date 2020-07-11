@@ -1,5 +1,12 @@
 import React, {component, useState} from 'react';
-import {StyleSheet, View, Image} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  ImageAppRegistry,
+  ScrollView,
+  StatusBar,
+  Image,
+} from 'react-native';
 import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -20,24 +27,41 @@ import {
   Right,
   Fab,
 } from 'native-base';
+import PieChart from 'react-native-pie-chart';
+
+const chart_wh = 220;
+const series = [123, 321, 123, 789, 537];
+const sliceColor = ['#F44336', '#2196F3', '#FFEB3B', '#4CAF50', '#FF9800'];
 
 function HomeScreen({navigation}) {
   const [active, setActive] = useState(false);
   return (
-    <Fab
-      active={active}
-      direction="up"
-      containerStyle={{}}
-      style={{backgroundColor: '#34A34F'}}
-      position="bottomRight"
-      onPress={() => setActive(!active)}>
-      <Icon name="add" />
-      <Button
-        style={{backgroundColor: '#F3BEBB'}}
-        onPress={() => navigation.navigate('MealAdd')}>
-        <Icon name="restaurant" />
-      </Button>
-    </Fab>
+    <View style={styles.MiddleContent}>
+      <Text />
+      <StatusBar hidden={true} />
+      <PieChart
+        chart_wh={chart_wh}
+        series={series}
+        sliceColor={sliceColor}
+        doughnut={true}
+        coverRadius={0.75}
+        coverFill={'#FFF'}
+      />
+      <Fab
+        active={active}
+        direction="up"
+        containerStyle={{}}
+        style={{backgroundColor: '#34A34F'}}
+        position="bottomRight"
+        onPress={() => setActive(!active)}>
+        <Icon name="add" />
+        <Button
+          style={{backgroundColor: '#F3BEBB'}}
+          onPress={() => navigation.navigate('MealAdd')}>
+          <Icon name="restaurant" />
+        </Button>
+      </Fab>
+    </View>
   );
 }
 
@@ -255,15 +279,16 @@ function HomeStack() {
           headerTintColor: '#515C5D',
         }}
       />
-      <Stack.Screen name="MealAdd" component={MealAddStack} />
-    </Stack.Navigator>
-  );
-}
-
-function MealAddStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="MealAddScreen" component={MealAddScreen} />
+      <Stack.Screen
+        name="MealAdd"
+        component={MealAddScreen}
+        options={{
+          headerStyle: {
+            backgroundColor: '#F3BEBB',
+          },
+          headerTintColor: '#515C5D',
+        }}
+      />
     </Stack.Navigator>
   );
 }
@@ -345,7 +370,7 @@ function App() {
 const styles = StyleSheet.create({
   MiddleContent: {
     flex: 1,
-    justifyContent: 'center',
+    //justifyContent: 'center',
     alignItems: 'center',
   },
 });
