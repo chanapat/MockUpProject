@@ -1,12 +1,5 @@
 import React, {component, useState} from 'react';
-import {
-  StyleSheet,
-  View,
-  ImageAppRegistry,
-  ScrollView,
-  StatusBar,
-  Image,
-} from 'react-native';
+import {StyleSheet, View, StatusBar, Image} from 'react-native';
 import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -24,17 +17,17 @@ import {
   Left,
   Body,
   Right,
-  Fab,
 } from 'native-base';
 import PieChart from 'react-native-pie-chart';
+import {LineChart} from 'react-native-chart-kit';
 
 const chart_wh = 220;
-const series = [123, 300];
-const sliceColor = ['#F44336', '#2196F3'];
+const series = [123, 360];
+const sliceColor = ['#D5EFE1', 'white'];
 
 function HomeScreen({navigation}) {
   return (
-    <Container>
+    <Container style={styles.Container}>
       <View style={styles.MiddleContent}>
         <Text />
         <StatusBar hidden={true} />
@@ -44,36 +37,38 @@ function HomeScreen({navigation}) {
           sliceColor={sliceColor}
           doughnut={true}
           coverRadius={0.75}
-          coverFill={'#FFF'}
+          coverFill={'#F9F9F4'}
         />
       </View>
-      <Content>
+      <Content style={{top: 15}}>
         <Card>
           <CardItem>
             <Left>
-              <Text>asdasdasdasd</Text>
+              <Text>Breakfast</Text>
             </Left>
+            <Right>
+              <Text>123 kcal</Text>
+            </Right>
           </CardItem>
         </Card>
         <Card>
           <CardItem>
             <Left>
-              <Text>asdasdasdasd</Text>
+              <Text>Lunch</Text>
             </Left>
+            <Right>
+              <Text>123 kcal</Text>
+            </Right>
           </CardItem>
         </Card>
         <Card>
           <CardItem>
             <Left>
-              <Text>asdasdasdasd</Text>
+              <Text>Dinner</Text>
             </Left>
-          </CardItem>
-        </Card>
-        <Card>
-          <CardItem>
-            <Left>
-              <Text>asdasdasdasd</Text>
-            </Left>
+            <Right>
+              <Text>123 kcal</Text>
+            </Right>
           </CardItem>
         </Card>
       </Content>
@@ -94,14 +89,6 @@ function ProfileScreen() {
     <View style={styles.MiddleContent}>
       <Text>Profile!</Text>
       <Button style={{backgroundColor: '#5067FF'}} />
-    </View>
-  );
-}
-
-function SettingScreen() {
-  return (
-    <View style={styles.MiddleContent} position="bottomRight">
-      <Text>Settings!</Text>
     </View>
   );
 }
@@ -377,6 +364,9 @@ const styles = StyleSheet.create({
   MiddleContent: {
     flex: 1,
     alignItems: 'center',
+  },
+  Container: {
+    backgroundColor: '#F9F9F4',
   },
 });
 
